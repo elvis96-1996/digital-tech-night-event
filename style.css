@@ -1,0 +1,580 @@
+/* =====================
+   RESET & BASE
+===================== */
+
+/* Reset et styles de base */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --white: #fff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: white;
+    color: #1e293b;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+
+/* =====================
+   HEADER
+===================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    flex-wrap: wrap;   
+}
+
+/* Logo + titre */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 65px;
+}
+
+.header-text h1 {
+    font-size: 1.8rem;
+}
+
+.header-text p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+
+/* =====================
+   MENU
+===================== */
+.header-nav {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    transition: 0.3s;
+}
+
+.header-nav a {
+    text-decoration: none;
+    list-style: none;
+    padding: 8px 14px;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.header-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    
+}
+.header-nav a:hover::after {
+    width: 100%;
+}
+
+
+.header-nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* =====================
+   CONTENU
+===================== */
+main {
+    max-width: 1100px;
+    margin: auto;
+}
+/* Hero Section */
+.hero {
+    min-height: 700px;
+    background: url('icon_stickmaster.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--light-color);
+    background-attachment: fixed;
+    letter-spacing: -1px;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 15px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Section Destinations Populaires */
+.popular-destinations {
+    padding: 20px 0;
+    background-color: var(--light-color);
+}
+
+.about-section {
+    background-color: var(--light-color);
+}
+
+.about-section p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+.about-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-content p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    
+}
+
+.feature:hover {
+    transform: translateY(-15px);
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.feature p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+.about-image:hover {
+    transform: translateY(-5px);
+}
+
+
+.section-title {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    position: relative;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 15px auto;
+}
+
+/* =====================
+   TABLE
+===================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* =====================
+   GALERIE PREMIUM
+===================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-items: center; /* centre chaque image */
+    align-items: center;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery img:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+
+/* =====================
+   BOUTON
+===================== */
+.btn {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(79,70,229,0.4);
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+/* =====================
+   CENTRAGE CONTENU - À PROPOS
+===================== */
+#about > p,
+.about-content > p {
+    max-width: 800px;      /* largeur lisible */
+    margin: 0 auto 30px;  /* centrage horizontal */
+    text-align: center;   /* centré visuellement */
+}
+
+/* =====================
+   CENTRAGE LISTE - SPEAKERS
+===================== */
+#speakers ol {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 0;
+    text-align: center;
+    list-style-position: inside;
+}
+
+#speakers ol li {
+    margin-bottom: 10px;
+}
+
+/* =====================
+   CENTRAGE TEXTE - CONTACT
+===================== */
+#contact p {
+    max-width: 500px;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+/* =====================
+   HEADER MOBILE PREMIUM
+===================== */
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 15px;
+        gap: 10px;
+    }
+    /* Le menu reste visible sans être envahissant */
+    .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.site-header {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+
+    .logo {
+        width: 55px;
+    }
+
+    .header-text h1 {
+        font-size: 1.3rem;
+    }
+
+    .header-text p {
+        font-size: 0.8rem;
+    }
+
+    .header-nav {
+        gap: 8px;
+    }
+
+    .header-nav a {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+}
+/* =====================
+   HERO MOBILE PREMIUM
+===================== */
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 420px;
+        padding: 100px 0 60px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1rem;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+
+    .hero {
+    background-attachment: fixed;
+}
+
+.hero-content h1 {
+    letter-spacing: -1px;
+}
+
+}
+
+@media (min-width: 1024px) {
+
+    .popular-destinations,
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+/* =====================
+   SECTIONS MOBILE PREMIUM
+===================== */
+@media (max-width: 768px) {
+
+    .popular-destinations,
+    .about-section {
+        padding: 30px 15px;
+    }
+
+    .about-section .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .section-title::after {
+        width: 60px;
+    }
+    .feature {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+}
+
+
+
+
+/* =====================
+   TEXTE MOBILE PREMIUM
+===================== */
+@media (max-width: 768px) {
+
+    p,
+    ol {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    #about p,
+    #contact p,
+    #speakers ol {
+        text-align: center;
+    }
+}
+
+/* =====================
+   GALERIE MOBILE PREMIUM
+===================== */
+@media (max-width: 768px) {
+    .about-image {
+        margin-top: 25px;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery img {
+        max-width: 100%;
+        height: 240px;
+    }
+}
+
+/* =====================
+   BOUTON MOBILE PREMIUM
+===================== */
+@media (max-width: 768px) {
+
+    .btn {
+        width: 90%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 15px 0;
+    }
+    .btn {
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+}
+
+/* =====================
+   FOOTER MOBILE
+===================== */
+@media (max-width: 768px) {
+
+    footer {
+        font-size: 0.85rem;
+        padding: 20px 10px;
+    }
+}
